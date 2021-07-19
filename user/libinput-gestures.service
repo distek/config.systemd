@@ -1,0 +1,14 @@
+[Unit]
+Description=libinput-gestures
+After=authenticator.service
+BindsTo=sway-startup-applications.target
+Requires=ydotoold.service
+
+[Service]
+Type=simple
+ExecStart=/sbin/libinput-gestures-setup start
+Restart=on-failure
+RestartSec=1
+
+[Install]
+WantedBy=sway-startup-applications.target

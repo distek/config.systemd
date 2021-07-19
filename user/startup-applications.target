@@ -1,0 +1,8 @@
+[Unit]
+Description=Startup Applications
+Documentation=man:systemd.special
+Requires=display-manager.service graphical.target
+After=authenticator.service display-manager.service graphical.target
+
+[Install]
+WantedBy=graphical.target

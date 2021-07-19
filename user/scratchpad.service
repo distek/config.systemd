@@ -1,0 +1,13 @@
+[Unit]
+Description=Scratchpad
+After=authenticator.service
+BindsTo=sway-startup-applications.target
+
+[Service]
+Type=simple
+ExecStart=/sbin/foot -W 100x50 -T 'scratchpad'
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=sway-startup-applications.target

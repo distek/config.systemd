@@ -1,0 +1,13 @@
+[Unit]
+Description=PulseMixer scratchpad
+After=authenticator.service
+BindsTo=sway-startup-applications.target
+
+[Service]
+Type=simple
+ExecStart=/sbin/foot -W 50x50 -T 'pulsemixer_scratch' pulsemixer
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=sway-startup-applications.target

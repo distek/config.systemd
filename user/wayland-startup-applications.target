@@ -1,0 +1,9 @@
+[Unit]
+Description=Startup Applications For Wayland
+Documentation=man:systemd.special
+BindsTo=startup-applications.target
+Requires=wayland-session.target
+After=authenticator.service wayland-session.target
+
+[Install]
+WantedBy=wayland-session.target

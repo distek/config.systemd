@@ -1,0 +1,8 @@
+[Unit]
+Description=Sway Session Target
+Documentation=man:systemd.special
+Requires=sway.service
+BindsTo=wayland-session.target
+
+[Install]
+WantedBy=wayland-session.target

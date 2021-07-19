@@ -1,0 +1,9 @@
+[Unit]
+Description=Wayland
+Documentation=man:systemd.special
+Requires=display-manager.service 
+After=display-manager.service
+
+[Install]
+WantedBy=startup-applications.target
+Alias=graphical.target

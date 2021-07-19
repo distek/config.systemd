@@ -1,0 +1,19 @@
+[Unit]
+Description=sway - SirCmpwn's Wayland window manager
+Documentation=man:sway(5)
+# BindsTo=sway-session.target
+
+[Service]
+Type=notify
+EnvironmentFile=-%h/.config/sway/env
+ExecStart=/usr/bin/sway
+Restart=on-failure
+RestartSec=1
+TimeoutStopSec=10
+NotifyAccess=all
+ExecStop=/usr/bin/systemctl --user stop startup-applications.target
+ExecStopPost=/usr/bin/systemctl --user unset-environment SWAYSOCK DISPLAY I3SOCK WAYLAND_DISPLAY
+
+[Install]
+Alias=display-manager.service
+RequiredBy=sway-session.target

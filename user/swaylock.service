@@ -1,0 +1,16 @@
+[Unit]
+Description=Swaylock
+Before=startup-applications.target
+After=sway-session.target
+Requires=sway-session.target
+
+[Service]
+Type=forking
+ExecStart=/sbin/swaylock \
+            -C %h/.config/swaylock/config
+Restart=on-failure
+RestartSec=1
+
+[Install]
+WantedBy=startup-applications.target
+Alias=authenticator.service

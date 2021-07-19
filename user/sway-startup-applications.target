@@ -1,0 +1,9 @@
+[Unit]
+Description=Startup Applications For Sway
+Documentation=man:systemd.special
+BindsTo=startup-applications.target
+Requires=sway-session.target sway.service
+After=authenticator.service sway-session.target
+
+[Install]
+WantedBy=sway-session.target
